@@ -1,0 +1,86 @@
+'distribucion beta
+alpha=2
+bata=3
+Function betamedia(a, b)
+betamedia = a / (a + b)
+End Function
+
+Function betavar(a, b)
+betavar = (a * b) / (((a + b) ^ 2) * (a + b + 1))
+End Function
+
+Function betacurtosis(a, b)
+betacurtosis = (3 * (a + b + 1) * ((a * b) * (a + b - 6) + 2 * (a + b) ^ 2)) / ((a * b) * (a + b + 2) * (a + b + 3))
+End Function
+Function betasesgo(a, b)
+betasesgo = (2 * (b - a) / (a + b + 2)) * (Sqr((a + b + 1) / (a * b)))
+End Function
+
+#######################################################################################################
+' Rangos
+Sub rangos()
+Range("A3:B7").Value = "Texto1"
+Range("A9").Value = "texto2"
+
+Range("A9").Value = Application.WorksheetFunction.RandBetwen(50, 120)
+valor = Range("A9").Value
+Range("A10").Value = "el resultado de AS9 es: " & valor
+
+End Sub
+Sub rango1()
+Range("D5").Value = "informe de ventas"
+Range("B6").Value = " año "
+Range("C6").Value = " monto "
+Range("B7").Value = 2015
+Range("B8").Value = 2016
+Range("B9").Value = 2017
+
+Range("C7").Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+Range("C8").Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+Range("C9").Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+End Sub
+Sub rango2()
+Range("D5").Value = "informe de ventas"
+Range("D5").Cells(1, 1).Value = "**informe de ventas**" ' con el 1,1 nos mantiene en la fila d5
+Range("D5").Cells(2, 1).Value = " año  "
+Range("D5").Cells(2, 2).Value = " monto  "
+Range("D5").Cells(3, 1).Value = 2015
+Range("D5").Cells(4, 1).Value = 2016
+Range("D5").Cells(5, 1).Value = 2017
+Range("D5").Cells(3, 2).Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+Range("D5").Cells(4, 2).Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+Range("D5").Cells(5, 2).Value = Application.WorksheetFunction.RandBetween(5000, 12000)
+Range("D5").Cells(-1, 1).Value = " ramo1  "
+Range("D5").Cells(0, 1).Value = " subramo  "
+' para cambiar de lugar todo solo se modifica el parametro B5
+' busqueda-B5-reemplazar-reemplazarcon d5- REEMPLAZAR TODO
+
+End Sub
+Sub rango3()
+Range("D5").Value = "informe de ventas"
+Range("D5").Offset(0, 0).Value = "informe de ventas" ' con offset, para mantenernos en d5 es con el punto 0,0
+Range("D5").Offset(1, 0).Value = " año "
+Range("D5").Offset(1, 1).Value = " monto "
+
+End Sub
+
+
+
+' ej: hacer este mismo reporte rango1 o rango2
+' como pedir al usuario que nos de el punto de partida y no necesariamente d5, con una variable o cuadro de texto
+
+Sub input1()
+MsgBox ("Bienvenido")
+nombre = InputBox("Introduce tu nombre")
+Range("b10").Value = " El nombre del usuario es: " & nombre
+'intrudusca la celda en la que quiera trabajar
+'resolver el informe como el anterior
+
+Val = InputBox()
+End Sub
+
+Sub calculadora()
+' hacer una calculadora de 2 digitos y que nos de la suma, resta, mult y division
+' pedir al usuario que nos diga en que celda de punto de partida en la que quiere los resultados
+
+End Sub
