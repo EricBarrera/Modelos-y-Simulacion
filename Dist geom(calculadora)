@@ -1,0 +1,339 @@
+Public Pantalla As String 'una variable public se puede usar en todos los procedimientos
+
+Private Sub Button0_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button0.Caption
+Else
+b = Button0.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button0.Caption
+Else
+b = Button0.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button1_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button1.Caption
+Else
+b = Button1.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button1.Caption
+Else
+b = Button1.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button2_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button2.Caption
+Else
+b = Button2.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button2.Caption
+Else
+b = Button2.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button3_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button3.Caption
+Else
+b = Button3.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button3.Caption
+Else
+b = Button3.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button4_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button4.Caption
+Else
+b = Button4.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button4.Caption
+Else
+b = Button4.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button5_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button5.Caption
+Else
+b = Button5.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button5.Caption
+Else
+b = Button5.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button6_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button6.Caption
+Else
+b = Button6.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button6.Caption
+Else
+b = Button6.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button7_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button7.Caption
+Else
+b = Button7.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button7.Caption
+Else
+b = Button7.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button8_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button8.Caption
+Else
+b = Button8.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button8.Caption
+Else
+b = Button8.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub Button9_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = Button9.Caption
+Else
+b = Button9.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = Button9.Caption
+Else
+b = Button9.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+
+Private Sub ButtonAC_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = ""
+Else
+x = Pantalla1.Value
+x = Left(x, Len(x) - 1)
+Pantalla1 = x
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = ""
+Else
+x = Pantalla2.Value
+x = Left(x, Len(x) - 1)
+Pantalla2 = x
+End If
+End Select
+End Sub
+Private Sub ButtonNext_Click()
+Select Case Pantalla
+Case "pant1"
+Pantalla2.SetFocus
+Pantalla = "pant2"
+Case "pant2"
+Pantalla1.SetFocus
+Pantalla = "pant1"
+End Select
+End Sub
+Private Sub ButtonOff_Click()
+Pantalla1 = ""
+Pantalla2 = ""
+Dist_Geometrica.Hide
+End Sub
+Private Sub ButtonPunto_Click()
+Select Case Pantalla
+Case "pant1"
+a = Pantalla1.Value
+If a = "" Then
+Pantalla1 = 0 & ButtonPunto.Caption
+Else
+b = ButtonPunto.Caption
+Pantalla1 = a & b
+End If
+Case "pant2"
+a = Pantalla2.Value
+If a = "" Then
+Pantalla2 = 0 & ButtonPunto.Caption
+Else
+b = ButtonPunto.Caption
+Pantalla2 = a & b
+End If
+End Select
+End Sub
+Private Sub ButtonReset_Click()
+Pantalla1 = ""
+Pantalla2 = ""
+Pantalla = "pant1"
+Pantalla1.SetFocus
+End Sub
+Private Sub UserForm_Initialize()
+Pantalla1.SetFocus 'SetFocus posiciona el cursor en un TextBox
+Pantalla1 = ""
+Pantalla2 = ""
+Pantalla = "pant1"
+End Sub
+Private Sub ButtonGenerar_click()
+'falto un poco del codigo
+ActivateWorkbook.Worksheets("Muestra").Range ("a1:g500")
+Selection.Clear
+ActivateWorkbook.Worksheets("Muestra").Select
+
+n = Pantalla1.Value
+p = Pantalla2.Value
+Cells(1, 1) = "dist geom"
+Cells(3, 1) = " muestra"
+Cells(3, 2) = n
+Cells(4, 1) = " parametro"
+Cells(4, 1) = p
+Cells(6, 1) = " interacion"
+Cells(6, 2) = " aleatorio"
+'vista, grab macro; grabamos un macro con la funcion redondear.menos y lo modifivamos para obtener la formula para visual basic
+For i = 1 To n
+Cells(6 + i, 1) = i
+Cells(6 + i, 2) = "=ROUNDOWN(LN(RAND())/LN(1-B4),0)"
+x = Cells(6 + i, 2) ' guardamos lo de la celda 6+i,2 en la variable x
+Cells(6 + i, 4) = x ' copiamos lo de x en la celda 6+i,4
+
+Next i
+
+For i = 1 To n - 1 ' compara las casillas para ordenar de menor a mayor
+For j = 1 To n - i ' garantiza que no se verifique la casilla g con la casilla g
+
+If Cells(6 + j, 4).Value > Cells(6 + 1 + j, 4).Value Then
+aux = Cells(6 + 1 + j, 4).Value
+Cells(6 + 1 + j, 4) = Cells(6 + j, 4)
+Cells(6 + j, 4) = aux
+End If
+Next j
+Next i
+
+
+For i = 1 To n
+If Cells(6 + i, 4).Value = Cells(6 + 1 + i, 4).Value Then ' comparamos los numeros uno con el siguiente para ver si son iguales
+Cells(6 + i, 6) = "" ' si son iguales no imprime nada
+Else
+Cells(6 + i, 6) = Cells(6 + i, 4).Value ' si son diferentes anota el numero de la primer casilla
+contador = contador + 1
+End If
+Next i
+
+Cells(4, 4) = "contador:"
+Cells(4, 5) = contador
+For i = 0 To n
+If Cells(6 + i, 6) = "" Then
+Cells(6 + i, 6).Delete ' eliminamos las casillas que no tengan nada
+End If
+Next i
+
+For j = 0 To n
+If Cells(6 + j, 6) = "" Then
+Cells(6 + j, 6).Delete ' eliminamos las casillas que no tengan nada de las que ya eliminamos
+End If
+Next j
+
+For i = 1 To contador
+Cells(6 + i, 7) = WorksheetFunction.CountIf(Range(Cells(7, 4), Cells(7 + n, 4)), Cells(6 + i, 6).Value)
+Next i
+
+
+
+End Sub
+' enviaran el codigo completo y corregida la parte para graficar********************************************************************
