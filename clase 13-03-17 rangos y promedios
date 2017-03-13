@@ -1,0 +1,42 @@
+Sub ejemplo1()
+Selection.CurrentRegion.Select
+Selection.ClearContents
+Range("b4").Value = "lista de datos"
+lim = 50
+
+For i = 1 To lim Step 1
+Range("B" & i + 4).Value = Rnd
+
+Next i
+Range("d4").Value = "analisis de resultados"
+Range("d4").Cells(2, 1).Value = "promedio"
+
+Range("d4").Cells(2, 2).Value = Application.WorksheetFunction.Average(Range("B:B"))
+
+End Sub
+
+Sub ejemplo2()
+Selection.CurrentRegion.Select
+Selection.ClearContents
+Range("b4").Value = "lista de datos"
+Range("a4").Value = "i"
+lim = 15
+Total = Range(Cells(5, 2), Cells(5 + lim, 2))
+For i = 1 To lim Step 1
+Range("A" & i + 4).Value = i
+Range("b" & i + 4).Value = Rnd
+Next i
+Range("d4").Value = "analisis de resultados"
+Range("d4").Cells(2, 1).Value = "promedio"
+Range("d4").Cells(2, 2).Value = Application.WorksheetFunction.Average(Total)
+Range("d4").Cells(3, 1).Value = "desviacion"
+Range("d4").Cells(3, 2).Value = Application.WorksheetFunction.StDev(Total)
+
+End Sub
+
+Sub ejemplo3()
+' practica 8 o  10 como sacar la raiz cuadrada de cada numero del ej anterior
+Range("B5").Select
+Selection.End(xlDown).Select
+
+End Sub
