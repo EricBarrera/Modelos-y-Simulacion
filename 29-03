@@ -1,0 +1,103 @@
+#crear una lista o secuencia
+# puede ser creada con seq o una simple lista
+seq(0,15, by=0.3)
+polizas<-(0:15)
+n<-15
+prob_4=dbinom(4,n,prob=0.25)#prob de que tenga 4 exitos de 15 n con prob de 0.25
+prob_4
+prob<-dbinom(polizas,n,prob=0.25)
+prob
+#la fn cbind permite agrupar objetos
+informef<- cbind(polizas,prob)
+informef
+#grafico de las probs
+plot(polizas,prob,type = "b", xlab="polizas")
+#otro tipo, l
+plot(polizas,prob,type = "l", xlab="polizas")
+points(polizas,prob)
+#calculo de las probs menores o iguales a P[X<=x]
+F<-cumsum(prob)
+F
+#otra forma de calculo
+Fx3<-pbinom(3,n,prob=0.25)
+Fx3
+Fx<-pbinom(polizas,n,prob=0.25)
+Fx
+#graficos de la fn acumulada
+#la prob entre los puntos permanece constante, por lo que se emp
+informeF<-cbind(polizas,Fx)
+informeF
+plot(polizas,Fx,type = "s")
+plot(polizas,Fx,type = "b")
+points(polizas,prob,col="red")
+#calculo de la media y var
+#E[x]=suma(xi*probi)
+media1=sum(polizas*prob)
+media1
+#empleando los resultados de la dbinom
+media2<-n*0.25
+media2
+#var
+segundo<-sum((polizas^2)*prob)
+segundo
+var<-segundo-media1^2
+var
+#var con parametros
+var1<-n*0.25*(1-0.25)
+var1
+#var
+var2=sum(((polizas-media1)^2)*prob)
+var2
+#ej para el calculo de percentiles
+#calcule el valor que deja por debajo al 30% de los siniestros
+q30<-qbinom(0.3,n,prob=0.25)
+q30
+percentiles<-seq(0,1,by=0.05)
+lpercent<-qbinom(percentiles,n,prob=0.25)
+informe_p<-cbind(percentiles*100,lpercent)
+informe_p
+plot(informe_p,type = "b",xlab="percentiles",ylab = "siniestros")
+#analisis de los percentiles ¿como se comporta la cartera,¿que info
+#tercer momento
+sesgo<-(1-2*0.25)/(n*0.25*(1-0.25))^0.5
+sesgo
+#obtener las sig prob
+#tener 9 sin p[x<=9]
+nueve<-dbinom(9,n,prob = 0.25)
+nueve
+#tener 5 o menos siniestros p[x<=5]
+cinco<-pbinom(5,n,prob = 0.25)
+cinco
+#tener mas de 7 sin p[x>7]=1-P[x<=7]
+siete<-1-pbinom(7,n,prob = 0.25)
+siete
+#tener 8 o mas siniestros P[x>=8]=1-P[x<=8]-P[x=8]=1-P[x<=7]
+ocho=1-pbinom(7,n,prob = 0.25)
+ocho
+#tener al menos 4 y a lo mucho 11 sin P[4<=x<=11]=P[x=4]+P[x=5]+...+P[x=11]=P[x<=11]-P[x<=3]
+entre4y11<-pbinom(11,n,prob = 0.25)-pbinom(3,n,prob = 0.25)
+entre4y11
+#tener entre 1 y 8 sin P[1<x<8]=p[x<=7]-P[x<=1]
+entre1y8<-pbinom(7,n,prob = 0.25)-pbinom(1,n,prob = 0.25)
+entre1y8
+#se tiene una muestra de 80 polizas del ramo de gastos medicos, la prob de que una de ellas tenga siniestros
+#es de .2% estudie la va sup una dist binom, lo anterior debido a que se seleccionara si la poliza tiene o no
+#siniestro, 
+
+n=80
+p=.2
+polizas<-
+
+
+simulados_gm<-rbinom(10000,n,prob = p)
+simulados_gm
+min(simulados_gm)
+max(simulados_gm)
+hist(simulados_gm)
+media_gmsim<-mean(simulados_gm)
+media_gmsim
+vargmsim<- var(simulados_gm)
+vargmsim
+hist(simulados_gm)
+plot(polizas,pgm,type = "l",ylab="prob de siniestros")
+plot(density(simulados_gm))
